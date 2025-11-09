@@ -28,3 +28,11 @@ const myFun  = function() {
 }
    
 //All non primitive has object reture type, funtion has funtion object return type
+
+
+/*Note
+
+Primitive datatype will store in stack.
+Non primitive datatype will store in Heep.
+
+ */
