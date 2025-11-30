@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h2>Events tutorial</h2>
+     <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+    
+</body>
+<script>
+ /****************Have to Learn about this events and propetry*****************/   
+     // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    //There are three types of implement onClick
+    //1) by impart onclick on html list item
+
+    //2) using onCLick funtion 
+    // document.getElementById('owl').onclick = function(){
+    //     alert("Your click on the owl")   
+    // }
+
+    //3) most efficient by the event listner
+    // document.querySelector('#owl').addEventListener('click',function(){
+    //     alert('owl hai ye ')
+    // },false)
+
+    //here third argument in the addEventListener is my event propagation
+    //There is two type of event propagation 1)Bubbleing up(when it is false) phle inside wala then outside wala click hota hai
+    //2) captureing mode(when it is true) phle outside wala elemetn bad me inside wala
+
+    //Here is example
+    // document.querySelector('#owl').addEventListener('click',function(){
+    //     console.log("owl hai yeh");
+        
+    // },false)
+
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //     console.log("clicked inside the owl");
+    //     e.stopPropagation() //it is use for block propagation
+    // },false)
+
+    //to block link opening we use prevent default
+    //   document.querySelector('#google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    // },false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        if(e.target.tagName === 'IMG'){
+            let removeit = e.target.parentNode;
+          removeit.remove();
+        }
+        
+    })
+</script>
+</html>
