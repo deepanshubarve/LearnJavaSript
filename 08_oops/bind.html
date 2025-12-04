@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>click me</button>
+    
+</body>
+<script>
+
+    class React{
+        constructor(){
+            this.server = "https://port = 30000";
+            this.library = "React";
+
+            document.querySelector('button')
+            .addEventListener('click',this.handleClick
+                .bind(this)  // without bind keyword hum this se current context jo ki hadleClick method
+                //ke lie sirf button the usi ko access kar pa rhe the but react class ke andar server and 
+                //libray ko acess kerne ke lie hume bind keyword ka use krna chahiye jisse unka acess mil  jaye
+            )
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log();
+            
+        }
+
+    }
+    const app = new React();
+    
+    
+</script>
+</html>
