@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+   <button id="green">Green</button>
+   <button id="orange">orange</button>
+    
+</body>
+ <script>
+        <!-- Real world example of closure and lexical scoping-->
+
+        function rColor(color){
+
+             return function(){
+                document.body.style.backgroundColor = `${color}`; 
+             }
+        }
+
+        document.getElementById('green').onclick = rColor("green")
+        document.getElementById('orange').onclick = rColor("orange")
+
+        
+
+
+        
+    </script>
+</html>
